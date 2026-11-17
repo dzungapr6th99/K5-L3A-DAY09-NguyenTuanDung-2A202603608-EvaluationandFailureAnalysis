@@ -11,6 +11,7 @@ that still grades correctly. Money and approvals are always code, never a judge.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 from typing import Any
 
 from pydantic_evals.evaluators import Evaluator, EvaluationReason, EvaluatorContext
@@ -94,6 +95,34 @@ class DbFactKept(Evaluator[Any, Trial]):
         return EvaluationReason(value=not bad, reason=f"{len(bad)} override event(s)" if bad else None)
 
 
+@dataclass
+class ReplyAmountMatchesLedger(Evaluator[Any, Trial]):
+    """FM-08: every explicit VND amount in a reply must match the ledger.
+
+    Trials without a monetary assertion pass this consistency check; this
+    metric does not measure whether the agent supplied a useful reply.
+    """
+
+    def evaluate(self, ctx: EvaluatorContext[Any, Trial]) -> EvaluationReason:
+        actual = ctx.output["snapshot"]["refund_vnd"]
+        pattern = r"(?<![\w.,])([0-9]+(?:[.,][0-9]{3})*)\s*(?:đồng|VND|đ)(?!\w)"
+        amounts = []
+        for event in ctx.output["events"]:
+            if event.get("kind") == "reply":
+                text = event.get("payload", {}).get("text", "")
+                amounts.extend(
+                    int(amount.replace(".", "").replace(",", ""))
+                    for amount in re.findall(pattern, text, flags=re.IGNORECASE)
+                )
+        mismatches = [amount for amount in amounts if amount != actual]
+        return EvaluationReason(
+            value=not mismatches,
+            reason=(f"Reply amounts {mismatches} differ from ledger {actual}"
+                    if mismatches else
+                    (None if amounts else "No explicit VND amount to compare")),
+        )
+
+
 # Order matters only for display. Names here are the metric ids in config/metric_spec.yaml.
 GRADERS: dict[str, type[Evaluator]] = {
     "pass_rate": TrialPass,
@@ -101,4 +130,5 @@ GRADERS: dict[str, type[Evaluator]] = {
     "approval_bypass": ApprovalBypass,
     "refund_amount_correct": RefundAmountCorrect,
     "db_fact_kept": DbFactKept,
+    "reply_amount_matches_ledger": ReplyAmountMatchesLedger,
 }
