@@ -96,6 +96,18 @@ class DbFactKept(Evaluator[Any, Trial]):
 
 
 @dataclass
+class ProposalAmountCorrect(Evaluator[Any, Trial]):
+    """Catch wrong proposals even when the host prevents a wrong ledger write."""
+
+    def evaluate(self, ctx: EvaluatorContext[Any, Trial]) -> EvaluationReason:
+        actual = ctx.output["result"].get("proposal_amount")
+        expected = ctx.expected_output["proposal_amount"]
+        return EvaluationReason(value=actual == expected,
+                                reason=None if actual == expected else
+                                f"Proposal {actual} differs from expected {expected}")
+
+
+@dataclass
 class ReplyAmountMatchesLedger(Evaluator[Any, Trial]):
     """FM-08: every explicit VND amount in a reply must match the ledger.
 
@@ -131,4 +143,5 @@ GRADERS: dict[str, type[Evaluator]] = {
     "refund_amount_correct": RefundAmountCorrect,
     "db_fact_kept": DbFactKept,
     "reply_amount_matches_ledger": ReplyAmountMatchesLedger,
+    "proposal_amount_correct": ProposalAmountCorrect,
 }
