@@ -1,0 +1,33 @@
+{
+  "base_commit": "8f32411d19c31794adc7af07d113a8fb64166da7",
+  "advanced_changes_committed": false,
+  "hash_normalization": "CRLF normalized to LF",
+  "files": {
+    "config/autonomy_policy.yaml": "6df9f4c0f9d9f720278afb378aa2e2fd114cf55cd3b8480d1102e99164d83ecd",
+    "config/fm_map.yaml": "81284d69cd02b7b03242871d6ae650d04cf00d13367aec2cdd5df1a165d106d2",
+    "config/metric_spec.yaml": "609014ec794ec7895f23b983195f9c9030aa6c42e551832419644034776ac767",
+    "config/metric_spec_v2.yaml": "60dd912d704135e8e842961538c9020c0e12b46ec3929b7a0de62f188bc40e06",
+    "config/pricing.yaml": "ff96a71186cfe5f2a88deb59fd77ccff14435e050458bf2b30f823c3e5141797",
+    "config/tools.manifest.v1.1.yaml": "8bd8147d6e862abb1dbaf80992a18373c7589d6765125d1d19b2c0240f4866a2",
+    "data/eval/eval_set_v1.jsonl": "71fa96fcc7ee9189e1a44e450684b3252cd16b26b5cd30a7f9dc9cbf6954cde8",
+    "data/eval/eval_set_v2.jsonl": "79b2666f4efc54a833e8059f68edfaea3342b93ed884b83bb11fd46b638aaf45",
+    "data/eval/labels_v1.json": "5c39cb2948732cbbc60384edca86e2fd90fbda587f672b31a6fc0b21040608aa",
+    "data/eval/labels_v2.json": "e8b49b4ec49f8b0bf88dbc60aa84719f71fc20e568abb9dd6b3be155ddbc1431",
+    "lab9/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lab9/ci_check.py": "4c15f4024eb42e0dbd3cda2a44d8257fbb7cc2d946a6114bc76cd805b88cf1e8",
+    "lab9/eval.py": "9b1e6c0e8c39955baf83afc74628a86f632fe880f090f85f1644a4d15fc5e6e5",
+    "lab9/evalset.py": "5a016b1e4d62ac522c1dc91011607ced5b555d792de676ae1bce345287170840",
+    "lab9/gate.py": "7b6ebd829281c1106695dc8c1dc5043a40dd190f64a4703534f81359cd6525f6",
+    "lab9/graders.py": "0f649ac1bc682d7b630f03c41ec43f3a931c17826adb53d6ffc0b3f3addc9975",
+    "lab9/judge.py": "bad6cf08a049980b569018c500f482177d4f11bbc48348c1ee9376d2ce3f915c",
+    "lab9/mutation.py": "9d77fb7aa670d68ac5a5295a5253d71c04901c75aae1d56512b4627bf0d5f0f2",
+    "lab9/smoke.py": "8804609388367e323c4bf1389fa19bf9b122ee3db1c27f1744b6b9ec5688ea37",
+    "lab9/stats.py": "2d21edca0b08652f62b3078e6cf50d43d9eae45d3d27bd1eff7ab4375c394bba",
+    "lab9/trace_case.py": "fa8adc39e222dacd7cb61ee109a9d13e4bf337a0eb9e8b59a2c912ed210e1e91",
+    "lab9/traps.py": "4e7d659c33131e377c7fa1918abf92c651da5e25f1bdb2920b173e5182ea56c2",
+    "lab9/variant_agent.py": "e4ce19e411ad4cddd251a05808ed7f53e2faf1ef7e3484c05a26fe6d4f3d415c",
+    "lab9/variants.py": "1b72778c41e6521878e307abf360c0f79ebc0f6178e1cf989765e4b1fc7b352e",
+    "lab9/verify_advanced.py": "6f9cb0385a8034f5caedc428a0bcdabe07fe5555e62992edabc934905f769a59"
+  },
+  "snapshot_sha256": "5b2fcde30f0a9a497b967319fff4bbdee95ac36bb046f7fac6dff6b3b4ea0432"
+}

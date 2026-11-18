@@ -1,0 +1,38 @@
+TRAP evaluator_errors_as_nan
+gate: PR E-slice_regression-20261118-79b2 vs main E-swarm-20261118-79b2 · eval set 79b2666f4efc
+  INTEGRITY PR: missing/nonfinite row metric proposal_amount_correct
+  INTEGRITY PR: missing/nonfinite row metric refund_amount_correct
+  INTEGRITY PR: missing/nonfinite row metric pass_rate
+exit 1 — blocked: integrity
+TRAP dropped_failing_rows
+gate: PR E-slice_regression-20261118-79b2 vs main E-swarm-20261118-79b2 · eval set 79b2666f4efc
+  INTEGRITY PR: row count differs from items x seeds
+  INTEGRITY PR: incomplete item/seed grid
+  INTEGRITY PR: invalid metric pass_at_3
+  INTEGRITY PR: invalid metric pass_hat_3
+  INTEGRITY PR: invalid metric pass_at_5
+  INTEGRITY PR: invalid metric pass_hat_5
+  INTEGRITY PR item/seed set differs from baseline
+exit 1 — blocked: integrity
+TRAP cherry_picked_seeds
+gate: PR E-slice_regression-20261118-79b2 vs main E-swarm-20261118-79b2 · eval set 79b2666f4efc
+  INTEGRITY PR: invalid metric pass_at_3
+  INTEGRITY PR: invalid metric pass_hat_3
+  INTEGRITY PR: invalid metric pass_at_5
+  INTEGRITY PR: invalid metric pass_hat_5
+  INTEGRITY PR item/seed set differs from baseline
+exit 1 — blocked: integrity
+TRAP loosened_spec
+gate: PR E-slice_regression-20261118-79b2 vs main E-swarm-20261118-79b2 · eval set 79b2666f4efc
+  INTEGRITY ratchet: loosened min for db_fact_kept
+  INTEGRITY ratchet: loosened min for refund_amount_correct
+  INTEGRITY ratchet: removed CI check for refund_amount_correct
+  INTEGRITY ratchet: loosened min for pass_rate
+  INTEGRITY ratchet: removed CI check for pass_rate
+  INTEGRITY ratchet: loosened min for pass_hat_5
+  INTEGRITY ratchet: loosened min for reply_amount_matches_ledger
+  INTEGRITY ratchet: loosened min for proposal_amount_correct
+  INTEGRITY ratchet: removed ('money_movement', 'pass_rate')
+  INTEGRITY ratchet: removed ('adversarial', 'pass_rate')
+  INTEGRITY ratchet: removed ('denial', 'pass_rate')
+exit 1 — blocked: integrity

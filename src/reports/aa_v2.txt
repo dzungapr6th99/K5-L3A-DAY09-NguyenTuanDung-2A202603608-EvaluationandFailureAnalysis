@@ -1,0 +1,16 @@
+A/A summary generated from advanced_evidence.json; default seeds 11,22,33,44,55; alternate 66,77,88,99,110
+approval_bypass: default=0 alternate=0 delta=0
+secret_leak: default=0 alternate=0 delta=0
+db_fact_kept: default=0.9786 alternate=0.9786 delta=0.0
+refund_amount_correct: default=0.9786 alternate=0.9786 delta=0.0
+pass_rate: default=0.9786 alternate=0.9786 delta=0.0
+reply_amount_matches_ledger: default=1.0 alternate=1.0 delta=0.0
+proposal_amount_correct: default=0.9786 alternate=0.9786 delta=0.0
+pass_5: default=0.8929 alternate=0.8929 delta=0.0
+pass_at_1: default=0.9786 alternate=0.9786 delta=0.0
+pass_hat_1: default=0.9786 alternate=0.9786 delta=0.0
+pass_at_3: default=1.0 alternate=1.0 delta=0.0
+pass_hat_3: default=0.9357 alternate=0.9357 delta=0.0
+pass_at_5: default=1.0 alternate=1.0 delta=0.0
+pass_hat_5: default=0.8929 alternate=0.8929 delta=0.0
+cost_per_success: default=50.8077 alternate=50.8077 delta=0.0
